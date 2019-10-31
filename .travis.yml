@@ -27,4 +27,4 @@ script:
 
 
 after_script:
-  - ./cc-test-reporter after-build --coverage-input-type clover --id 8a70418503eece4a153acfa3456f2e999c748b1c01cfddeca9092a9c48e4f7ed --exit-code $TRAVIS_TEST_RESULT
+  - ./cc-test-reporter after-build --coverage-input-type clover --id 8570749a61fca3ed0af0cb1f1e2aa9be2b1663d65bc18941dd39258d88aa5d52 --exit-code $TRAVIS_TEST_RESULT

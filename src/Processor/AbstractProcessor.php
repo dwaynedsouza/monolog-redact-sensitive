@@ -1,7 +1,6 @@
 <?php
 namespace AndyBeak\Monolog\Redact\Processor;
 
-use AndyBeak\Monolog\Redact\Exceptions\SaltTooShortException;
 use AndyBeak\Monolog\Redact\Interfaces\ProcessorInterface;
 
 abstract class AbstractProcessor implements ProcessorInterface

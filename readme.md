@@ -1,4 +1,7 @@
 # Monolog data redaction
+[![Build Status](https://travis-ci.org/andybeak/monolog-redact-sensitive.svg?branch=master)](https://travis-ci.org/andybeak/monolog-redact-sensitive)
+[![Maintainability](https://api.codeclimate.com/v1/badges/c6df2bff64c356f48bcd/maintainability)](https://codeclimate.com/github/andybeak/monolog-redact-sensitive/maintainability) 
+[![Test Coverage](https://api.codeclimate.com/v1/badges/c6df2bff64c356f48bcd/test_coverage)](https://codeclimate.com/github/andybeak/monolog-redact-sensitive/test_coverage)
 
 These [Monolog](https://github.com/Seldaek/monolog/blob/master/README.md) processors will identify and strip out emails and credit cards respectively.
 

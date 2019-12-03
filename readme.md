@@ -1,6 +1,6 @@
 # Monolog data redaction
 [![Build Status](https://travis-ci.org/andybeak/monolog-redact-sensitive.svg?branch=master)](https://travis-ci.org/andybeak/monolog-redact-sensitive)
-[![Maintainability](https://api.codeclimate.com/v1/badges/c6df2bff64c356f48bcd/maintainability)](https://codeclimate.com/github/andybeak/monolog-redact-sensitive/maintainability) 
+[![Maintainability](https://api.codeclimate.com/v1/badges/c6df2bff64c356f48bcd/maintainability)](https://codeclimate.com/github/andybeak/monolog-redact-sensitive/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/c6df2bff64c356f48bcd/test_coverage)](https://codeclimate.com/github/andybeak/monolog-redact-sensitive/test_coverage)
 
 These [Monolog](https://github.com/Seldaek/monolog/blob/master/README.md) processors will identify and strip out emails and credit cards respectively.
@@ -13,9 +13,32 @@ Install the latest version with
 
     composer require andybeak/monolog-redact-sensitive
 
+## Usage
+
+Here is example usage:
+
+    <?php
+    require('vendor/autoload.php');
+    use AndyBeak\Monolog\Redact\Processor\RedactCreditCardProcessor;
+    use Monolog\Logger;
+    use Monolog\Handler\StreamHandler;
+
+    $generalLogger = new Logger('general');
+    $streamHandler = new StreamHandler(__DIR__ . DIRECTORY_SEPARATOR . 'example.log', Logger::DEBUG);
+    $generalLogger->pushHandler($streamHandler);
+
+    $processor = new RedactCreditCardProcessor();
+    $generalLogger->pushProcessor($processor);
+
+    $generalLogger->debug('Visa test: 4111111111111111 is a test card number');
+
+The credit card number will be removed in the file
+
 ## Credit card stripper
 
 The code looks for potential credit cards by using regex to identify strings of numbers that are the right length.  These numbers may contain spaces or dashes between them.
+
+The regex is not perfect
 
 The numbers are validated and if they are valid credit card numbers they are redacted.
 
@@ -30,4 +53,4 @@ You can call the `setRegex` function to replace the regex with something less co
 
 The signature of this function is:
 
-    public function setRegex(string $regex): RedactEmailProcessor 
+    public function setRegex(string $regex): RedactEmailProcessor

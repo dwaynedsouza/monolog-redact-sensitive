@@ -8,10 +8,6 @@ use LVR\CreditCard\Factory;
 class RedactCreditCardProcessor extends AbstractProcessor
 {
 
-    /**
-     * @var string
-     */
-    private $cardRegex = '/(?:\d[ -]*?){13,16}/';
 
     /**
      * @param string $input
@@ -49,11 +45,24 @@ class RedactCreditCardProcessor extends AbstractProcessor
      */
     public function findPotentialCardNumbers(string $input): array
     {
-        preg_match_all($this->cardRegex, $input, $matches, PREG_PATTERN_ORDER);
+        // we need to do three preg_match_all because after the first match is found,
+        // the subsequent searches are continued on from end of the last match.
+        // This means that the pattern "2 4111111111111111" would break a single regex
+        $regexWithSpaces = '/(?:\d[ ]*?){13,16}/';
+        preg_match_all($regexWithSpaces, $input, $spaceMatches, PREG_PATTERN_ORDER);
 
-        $potentialCardNumbers = $matches[0];
+        $regexWithHyphen = '/(?:\d[-]*?){13,16}/';
+        preg_match_all($regexWithHyphen, $input, $hyphenMatches, PREG_PATTERN_ORDER);
 
-        return $potentialCardNumbers;
+        $regexWithoutSpaces = '/\d{13,16}/';
+        preg_match_all($regexWithoutSpaces, $input, $matches, PREG_PATTERN_ORDER);
+
+        $regexWithSpacesAndHyphen = '/(?:\d[ -]*?){13,16}/';
+        preg_match_all($regexWithSpacesAndHyphen, $input, $bothMatches, PREG_PATTERN_ORDER);
+
+        $matchedCardNumbers = array_merge($spaceMatches[0], $matches[0], $hyphenMatches[0], $bothMatches[0]);
+
+        return $matchedCardNumbers;
     }
 
     /**

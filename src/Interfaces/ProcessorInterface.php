@@ -1,5 +1,5 @@
 <?php
-namespace AndyBeak\Monolog\Redact\Interfaces;
+namespace MuhammadGant\Monolog\Redact\Interfaces;
 
 interface ProcessorInterface
 {

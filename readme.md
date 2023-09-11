@@ -11,7 +11,7 @@ WARNING: These processors will json serialise your $context. This may cause some
 
 Install the latest version with
 
-    composer require andybeak/monolog-redact-sensitive
+    composer require muhammadgant/monolog-redact-sensitive
 
 ## Usage
 
@@ -19,7 +19,7 @@ Here is example usage:
 
     <?php
     require('vendor/autoload.php');
-    use AndyBeak\Monolog\Redact\Processor\RedactCreditCardProcessor;
+    use MuhammadGant\Monolog\Redact\Processor\RedactCreditCardProcessor;
     use Monolog\Logger;
     use Monolog\Handler\StreamHandler;
 

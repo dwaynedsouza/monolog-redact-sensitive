@@ -1,6 +1,6 @@
 <?php
 
-use \AndyBeak\Monolog\Redact\Processor\RedactCreditCardProcessor;
+use \MuhammadGant\Monolog\Redact\Processor\RedactCreditCardProcessor;
 use PHPUnit\Framework\TestCase;
 use Monolog\Handler\TestHandler;
 use Monolog\Logger;

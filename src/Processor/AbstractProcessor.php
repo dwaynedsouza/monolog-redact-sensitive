@@ -1,7 +1,7 @@
 <?php
-namespace AndyBeak\Monolog\Redact\Processor;
+namespace MuhammadGant\Monolog\Redact\Processor;
 
-use AndyBeak\Monolog\Redact\Interfaces\ProcessorInterface;
+use MuhammadGant\Monolog\Redact\Interfaces\ProcessorInterface;
 
 abstract class AbstractProcessor implements ProcessorInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-use \AndyBeak\Monolog\Redact\Processor\RedactEmailProcessor;
+use \MuhammadGant\Monolog\Redact\Processor\RedactEmailProcessor;
 use PHPUnit\Framework\TestCase;
 use Monolog\Handler\TestHandler;
 use Monolog\Logger;

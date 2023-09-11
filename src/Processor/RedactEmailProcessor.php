@@ -1,5 +1,5 @@
 <?php
-namespace AndyBeak\Monolog\Redact\Processor;
+namespace MuhammadGant\Monolog\Redact\Processor;
 
 class RedactEmailProcessor extends AbstractProcessor
 {

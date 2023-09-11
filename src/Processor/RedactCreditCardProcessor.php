@@ -1,6 +1,6 @@
 <?php
 
-namespace AndyBeak\Monolog\Redact\Processor;
+namespace MuhammadGant\Monolog\Redact\Processor;
 
 use LVR\CreditCard\Exceptions\CreditCardException;
 use LVR\CreditCard\Factory;

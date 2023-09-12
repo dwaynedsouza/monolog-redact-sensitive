@@ -13,6 +13,6 @@
     "phpunit/phpunit": "^8.4"
   },
   "autoload": {
-    "psr-4": {"MuhmmadGant\\Monolog\\Redact\\": "src/"}
+    "psr-4": {"MuhammadGant\\Monolog\\Redact\\": "src/"}
   }
 }

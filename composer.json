@@ -5,7 +5,7 @@
   "type": "library",
   "license": "MIT",
   "require": {
-    "monolog/monolog": "^2.0",
+    "monolog/monolog": "^3.0"
     "php": ">=7.2.18",
     "laravel-validation-rules/credit-card": "^1.2"
   },
